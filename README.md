@@ -4,15 +4,19 @@ This directory contains the built static files for deployment to GitHub Pages.
 
 ## Setup Instructions
 
+**IMPORTANT: Enable GitHub Pages BEFORE pushing the workflow!**
+
 1. **Push this directory to a GitHub repository** named `intellector-analyzer-host` (or update the base path in `frontend/vite.config.js` to match your repository name)
 
-2. **Enable GitHub Pages**:
+2. **Enable GitHub Pages FIRST** (Required before workflow can run):
    - Go to your repository Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: `main` or `master` → `/ (root)`
-   - Save
+   - Under "Build and deployment":
+     - Source: **GitHub Actions**
+   - Save (this creates the Pages environment)
 
-3. **GitHub Actions will automatically deploy** when you push to the main branch
+3. **Push your code** - GitHub Actions will automatically deploy when you push to the main branch
+
+**Note:** If you see "Get Pages site failed" error, it means GitHub Pages isn't enabled yet. Enable it manually in Settings → Pages first, then re-run the workflow.
 
 ## Manual Deployment
 
